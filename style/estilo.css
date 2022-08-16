@@ -1,0 +1,44 @@
+body{
+  background-color: #E5E5E5;
+  font-family: 'Inter', sans-serif;
+}
+
+.logo{
+  height: 48px;
+  width: 32px;
+  margin-left: 16px;
+  margin-top: 24px;
+  position: absolute;
+}
+
+.btns{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#btn-comecar{
+  height: 105px;
+  width: 317px;
+  margin-top: 281px;
+  border-radius: 24px;
+  padding: 24px;
+  background-color: #0A3871; 
+  color: #FFFFFF;
+ margin-bottom: 20px;
+}
+
+#btn-adicionar {
+  height: 67px;
+  width: 293px;
+  top: 403px;
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid #0A3871;
+  color: #0A3871;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 230px;
+}
