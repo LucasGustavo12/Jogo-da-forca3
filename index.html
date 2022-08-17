@@ -16,18 +16,51 @@
 <img src="imgs/icon.png" alt="icone-A">
 </div>
 </header>
-<body>
-  <div class="tabuleiro" id="tabuleiro">
-    <!---CANVAS-->
-  </div>
-  <div class = "btns" id = "btns">
-    <div>
-      <button id="btn-comecar">Começar Jogo</button>
+<body> 
+  <section class="iniciar"><!--is--hide esconde a section-->
+    <div class="btn-comecar-adicionar" id="botoes">
+      <div>
+        <button id="btn-comecar">Começar Jogo</button>
+      </div>
+      <div>
+        <button id="btn-adicionar">Adicionar nova palavra</button>
+      </div>
     </div>
-    <div>
-      <button id="btn-adicionar">Adicionar nova palavra</button>
+  </section>
+  <section class="game">
+    <div class="tabuleiro" id="jogo">
+      <canvas class="area-jogo"></canvas>
     </div>
-  </div>
+    <div class="letras">
+      <canvas class="area-letras"></canvas>
+    </div>
+    <div class="btn-novo-desistir">
+      <div>
+        <button class="btn-novo">Novo jogo</button>
+      </div>
+      <div>
+        <button class="btn-desistir">Desistir</button>
+      </div>
+    </div>
+
+  </section>
+  <section class="adicionar">
+    <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite alguma palavra ou frase"></textarea>
+    <div class ="msg" id="aviso">
+      <img src="imgs/vector.png" alt="ponto de exclamação">
+      <p> Máx. de 8 letras</p>
+    </div>
+    <div class="btn-salvar-cancelar">
+      <div >
+        <button class = "btn-salvar" id="btn-s">Salvar e começar</button>
+      </div>
+      <div>
+        <button class="btn-cancelar" id="btn-c">Cancelar</button>
+      </div>
+    </div>
+    
+  </section>
+ 
 </body>
 <footer>
 <div class="copy">
