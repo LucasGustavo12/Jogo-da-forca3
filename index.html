@@ -17,22 +17,19 @@
 </div>
 </header>
 <body> 
-  <section class="iniciar"><!--is--hide esconde a section-->
+  <section class="iniciar is--hide"><!--is--hide esconde a section-->
     <div class="btn-comecar-adicionar" id="botoes">
       <div>
-        <button id="btn-comecar">Começar Jogo</button>
+        <button class="btn-comecar">Começar Jogo</button>
       </div>
       <div>
-        <button id="btn-adicionar">Adicionar nova palavra</button>
+        <button class="btn-adicionar">Adicionar nova palavra</button>
       </div>
     </div>
   </section>
   <section class="game">
-    <div class="tabuleiro" id="jogo">
-      <canvas class="area-jogo"></canvas>
-    </div>
-    <div class="letras">
-      <canvas class="area-letras"></canvas>
+    <div class="tabuleiro" id="jogo"><!--verificar tamanho do tabuleiro com matt-->
+      <canvas class="area-jogo" id="forca" style="border:1px solid #d3d3d3;"></canvas>
     </div>
     <div class="btn-novo-desistir">
       <div>
@@ -45,10 +42,10 @@
 
   </section>
   <section class="adicionar">
-    <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite alguma palavra ou frase"></textarea>
+    <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite uma palavra ou frase"></textarea>
     <div class ="msg" id="aviso">
       <img src="imgs/vector.png" alt="ponto de exclamação">
-      <p> Máx. de 8 letras</p>
+      <p>Máx. de 8 letras</p>
     </div>
     <div class="btn-salvar-cancelar">
       <div >
@@ -58,9 +55,8 @@
         <button class="btn-cancelar" id="btn-c">Cancelar</button>
       </div>
     </div>
-    
   </section>
- 
+  <script src="js/script.js"></script>
 </body>
 <footer>
 <div class="copy">

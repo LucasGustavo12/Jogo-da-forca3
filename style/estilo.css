@@ -33,7 +33,7 @@ align-items: center;
 cursor: pointer;
 }
 
-#btn-comecar{
+.btn-comecar{
   height: 105px;
   width: 317px;
   margin-top: 281px;
@@ -44,7 +44,7 @@ cursor: pointer;
  margin-bottom: 20px;
 }
 
-#btn-adicionar {
+.btn-adicionar {
   height: 67px;
   width: 293px;
   top: 403px;
@@ -91,7 +91,7 @@ cursor: text;
   margin-left: 16px;
   margin-top: 203px;
   margin-bottom: 16px;
-  margin-right: 210px;
+  margin-right: 180px;
 }
 
 .msg img {
@@ -141,26 +141,22 @@ align-items: center;
 
 /*Seção do game*/
 .game {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.area-jogo {
-  background-color: rgb(212, 16, 16);
-  width: 286.65px;
-  height: 351px;
-  margin-top: 136px;
-  margin-left: 44.68px;
+.tabuleiro{
+  width: 100%;
+  text-align: center;
 }
 
-.area-letras {
-  width: 304px;
-  height: 116px;
-  margin-left: 36px;
-  margin-top: 40px;
-  background-color: rgb(235, 18, 18);
+.area-jogo {
+  width: 454px;
+  height: 467px;
+  max-width: 1200px;
+  max-height: 800px;
+  margin-top: 136px;
+  
 }
 
 .btn-novo-desistir {
@@ -189,3 +185,51 @@ align-items: center;
     border: 1px solid #0A3871;
     color: #0A3871;
   }
+/*desktop*/
+  @media (min-width: 1000px){
+    .btn-adicionar{
+    width: 317px;
+    height: 105px;
+    }
+
+  .btn-novo-desistir{
+    display: flex;
+    cursor: pointer;
+    align-items: baseline;
+    flex-direction: initial;
+  }
+
+  .btn-novo{
+    cursor: pointer;
+  }
+
+  .btn-desistir{
+    margin-left: 24px;
+    cursor: pointer;
+  }
+
+  .btn-salvar-cancelar{
+    display: flex;
+    cursor: pointer;
+    align-items: baseline;
+    flex-direction: initial;
+  }
+
+  .btn-cancelar{
+    margin-left:24px;
+    cursor: pointer;
+  }
+
+  .msg{
+    margin-right: 580px;
+  }
+  
+  .area-jogo {
+    width: 1200px;
+    height: 700px;
+  }
+
+  .area-palavra{
+    width: auto;
+  }
+}
