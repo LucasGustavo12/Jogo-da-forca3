@@ -6,8 +6,8 @@ body{
   padding: 16px;
 }
 
-.is--hide{
-  display: none;
+.hide {
+  display:none !important;
 }
 
 .logo{

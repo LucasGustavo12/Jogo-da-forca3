@@ -17,17 +17,17 @@
 </div>
 </header>
 <body> 
-  <section class="iniciar is--hide"><!--is--hide esconde a section-->
+  <section class="iniciar" id="inicio"><!--is--hide esconde a section-->
     <div class="btn-comecar-adicionar" id="botoes">
       <div>
-        <button class="btn-comecar">Começar Jogo</button>
+        <button class="btn-comecar" id="comecar">Começar Jogo</button>
       </div>
       <div>
-        <button class="btn-adicionar">Adicionar nova palavra</button>
+        <button class="btn-adicionar" id="adicionar">Adicionar nova palavra</button>
       </div>
     </div>
   </section>
-  <section class="game">
+  <section class="game" id="secao-jogo">
     <div class="tabuleiro" id="jogo"><!--verificar tamanho do tabuleiro com matt-->
       <canvas class="area-jogo" id="forca" style="border:1px solid #d3d3d3;"></canvas>
     </div>
@@ -39,9 +39,8 @@
         <button class="btn-desistir">Desistir</button>
       </div>
     </div>
-
   </section>
-  <section class="adicionar">
+  <section class="adicionar" id="add">
     <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite uma palavra ou frase"></textarea>
     <div class ="msg" id="aviso">
       <img src="imgs/vector.png" alt="ponto de exclamação">

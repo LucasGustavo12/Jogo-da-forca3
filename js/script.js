@@ -1,10 +1,42 @@
+//Funções para mostrar cada seção
 
-const palavras = ["JAVA", "HTML", "CSS"];
-let quantidadeErros = 0;
-let acertos = 0;
-let tentativas = "";
-palavraSecreta = palavras[Math.floor(Math.random() * 6)];
+//Novo Jogo
+let comecar = document.getElementById("comecar");
+comecar.addEventListener("click", function(){
 
+  let sectioninicio = document.getElementById("inicio");
+  let sectionadiciona = document.getElementById("add");
+  
+  sectioninicio.classList.add("hide");
+  sectionadiciona.classList.add("hide");
+});
+
+/*
+//Adicionar Palavras
+let adicionar = document.getElementById("adicionar");
+adicionar.addEventListener("click", function(){
+  let sectioninicio = document.getElementById("inicio");
+  let sectionjogo = document.getElementById("secao-jogo");
+  if(sectioninicio.style.display === "none" && sectionjogo.style.display === "none") {
+    sectioninicio.style.display = "block";
+    sectionjogo.style.display = "block";
+  }else {
+    sectioninicio.style.display = "none";
+    sectionjogo.style.display = "none";
+  }
+})
+
+//pensar em como deixar as funções mais simples
+
+*/
+
+/*
+const palavras = ["JAVA", "HTML", "CSS", "PHP", "JavaScript"];
+
+const palavraSecreta = tecnologias[Math.floor(Math.ramdom() * tecnologias.lenght)];
+const letrasErradas = [];
+const letrasCorretas = [];
+*/
 let c = document.getElementById("forca");
 let ctx = c.getContext("2d");
 
@@ -18,74 +50,107 @@ desenhaBracoEsquerdo();
 desenhaBracoDireito();
 desenhaPernaEsquerda();
 desenhaPernaDireita();
-desenhaTracos();
+//desenhaTracos();
 
+
+function desenhaBoneco(quantidadeErros){
+  switch (quantidadeErros){
+    case 1:
+        desenhaPoste();
+        break;
+    case 2: desenhaBarra();
+        break;
+    case 3:
+      desenhaApoio();
+      break;
+    case 4:
+      desenhaCabeca();
+      break;
+    case 5:
+      desenhaTronco();
+      break;
+    case 6:
+      desenhaBracoEsquerdo();
+      break;
+    case 7:
+      desenhaBracoDireito();
+      break;
+    case 8:
+      desenhaPernaEsquerda();
+      break;
+    case 9:
+      desenhaPernaDireita();
+      break;
+  }
+}
 
 function desenhaBase() {
   ctx.strokeStyle = '#0A3871';
-  ctx.moveTo(180, 80);
-  ctx.lineTo(80, 80);
+  ctx.moveTo(200, 80);
+  ctx.lineTo(90, 80);
   ctx.stroke();
 }
 
 function desenhaPoste() {
-  ctx.moveTo(100, 80);
-  ctx.lineTo(100, 0);
+  ctx.moveTo(120, 80);
+  ctx.lineTo(120, 0);
   ctx.stroke();
 }
 
 function desenhaBarra() {
-  ctx.moveTo(100, 1);
-  ctx.lineTo(150, 1);
+  ctx.moveTo(120, 1);
+  ctx.lineTo(170, 1);
   ctx.stroke();
 }
 
 function  desenhaApoio() {
-  ctx.moveTo(150, 10);
-  ctx.lineTo(150, 0);
+  ctx.moveTo(170, 10);
+  ctx.lineTo(170, 0);
   ctx.stroke();
 }
 
 function desenhaCabeca(){
   ctx.beginPath();
-  ctx.arc(150,20,10,0,2 * Math.PI);
+  ctx.arc(170,20,10,0,2 * Math.PI);
   ctx.stroke();
 }
 
-function desenhaTronco(){
-  ctx.moveTo(150,30);
-  ctx.lineTo(150,50);
+function desenhaTronco() {
+  ctx.moveTo(170,30);
+  ctx.lineTo(170,50);
   ctx.stroke();
 }
 
 function desenhaBracoEsquerdo(){
-  ctx.moveTo(150, 30);
-  ctx.lineTo(160, 40);
+  ctx.moveTo(170, 30);
+  ctx.lineTo(180, 40);
   ctx.stroke();
 }
 
 function desenhaBracoDireito(){
-  ctx.moveTo(150, 30);
-  ctx.lineTo(140, 40);
+  ctx.moveTo(170, 30);
+  ctx.lineTo(160, 40);
   ctx.stroke();
 }
 
 function desenhaPernaEsquerda(){
-  ctx.moveTo(150, 50);
-  ctx.lineTo(160, 70);
+  ctx.moveTo(170, 50);
+  ctx.lineTo(180, 60);
   ctx.stroke();
 }
 
 function desenhaPernaDireita(){
-  ctx.moveTo(150, 50);
-  ctx.lineTo(140, 70);
+  ctx.moveTo(170, 50);
+  ctx.lineTo(160, 60);
   ctx.stroke();
 }
 
+/*
 function desenhaTracos(){
-  for(var i = 0; i< palavraSecreta.length; i++){
-    ctx.moveTo(20 + (35 * i), 200);
-    ctx.lineTo(50 +(35 * i), 200);
-    ctx.stroke();
+for(let i =0; i < palavraSecreta.length; i++){
+ctx.moveTo(90 + (140 * i), 110);
+ctx.lineTo(70 + (140 * i), 110);
+ctx.stroke();
   }
 }
+*/
