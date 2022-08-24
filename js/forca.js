@@ -1,46 +1,17 @@
-//Funções para mostrar cada seção
+const palavras = ["JAVA","HTML","CSS","PHP","PYTHON","LUA"];
+let quantidadeErros = 0;
+let acertos = 0;
+let tentativas = "";
+palavraSecreta = palavras[Math.floor(Math.random() * 7)];
 
-//Novo Jogo
-let comecar = document.getElementById("comecar");
-comecar.addEventListener("click", function(){
-
-  let sectioninicio = document.getElementById("inicio");
-  let sectionadiciona = document.getElementById("add");
-  
-  sectioninicio.classList.add("hide");
-  sectionadiciona.classList.add("hide");
-});
-
-/*
-//Adicionar Palavras
-let adicionar = document.getElementById("adicionar");
-adicionar.addEventListener("click", function(){
-  let sectioninicio = document.getElementById("inicio");
-  let sectionjogo = document.getElementById("secao-jogo");
-  if(sectioninicio.style.display === "none" && sectionjogo.style.display === "none") {
-    sectioninicio.style.display = "block";
-    sectionjogo.style.display = "block";
-  }else {
-    sectioninicio.style.display = "none";
-    sectionjogo.style.display = "none";
-  }
-})
-
-//pensar em como deixar as funções mais simples
-
-*/
-
-/*
-const palavras = ["JAVA", "HTML", "CSS", "PHP", "JavaScript"];
-
-const palavraSecreta = tecnologias[Math.floor(Math.ramdom() * tecnologias.lenght)];
-const letrasErradas = [];
-const letrasCorretas = [];
-*/
 let c = document.getElementById("forca");
 let ctx = c.getContext("2d");
 
+
 desenhaBase();
+desenhaTracos();
+
+/*
 desenhaPoste();
 desenhaBarra();
 desenhaApoio();
@@ -51,7 +22,52 @@ desenhaBracoDireito();
 desenhaPernaEsquerda();
 desenhaPernaDireita();
 //desenhaTracos();
+*/
 
+window.onkeypress = teclaPressionada; 
+
+function teclaPressionada() {
+  if (!tentativas.includes(event.key) && palavraSecreta.includes((event.key).toUpperCase())){
+    for(let i= 0; i < palavraSecreta.length; i++){
+      if(palavraSecreta[i] == (event.key).toUpperCase()) {
+        ctx.font = "20px Arial";
+        ctx.fillStyle='#0A3871';
+        ctx.fillText((event.key).toUpperCase(), 70 + (35 * i), 100);
+        acertos++; 
+      }
+    }
+  } else {
+    adicionaTentativa();
+    quantidadeErros++;
+    desenhaBoneco(quantidadeErros);
+  }
+  verificaFimdeJogo();
+}
+
+function adicionaTentativa() {
+  if (!tentativas.includes(event.key)) {
+    tentativas = tentativas + event.key;
+    ctx.font = "10px Arial";
+    ctx.fillStyle = '#495057';
+    ctx.fillText(tentativas.toUpperCase(), 110, 110);
+  }
+}
+
+function verificaFimdeJogo() {
+   if(quantidadeErros >= 9) {
+    ctx.font = "10px Arial";
+    ctx.fillStyle='red';
+    ctx.fillText("Game Over! A palavra era: " + palavraSecreta, 10, 140);
+    window.onkeypress = null;
+    return;
+   }
+    else if(acertos == palavraSecreta.length){
+      ctx.font = "10px Arial";
+      ctx.fillText("Você ganhou!", 10, 130);
+      window.onkeypress = null;
+      return;
+    }
+}
 
 function desenhaBoneco(quantidadeErros){
   switch (quantidadeErros){
@@ -145,12 +161,11 @@ function desenhaPernaDireita(){
   ctx.stroke();
 }
 
-/*
-function desenhaTracos(){
-for(let i =0; i < palavraSecreta.length; i++){
-ctx.moveTo(90 + (140 * i), 110);
-ctx.lineTo(70 + (140 * i), 110);
-ctx.stroke();
-  }
+
+function desenhaTracos() {
+for (let i=0; i<palavraSecreta.length; i++) {
+  ctx.moveTo(70 + (35 * i), 100);
+  ctx.lineTo(90 + (35 * i), 100);
+  ctx.stroke();
+ }
 }
-*/

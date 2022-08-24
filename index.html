@@ -27,20 +27,20 @@
       </div>
     </div>
   </section>
-  <section class="game" id="secao-jogo">
+  <section class="game hide" id="secao-jogo"> <!--Colocar Hide ao lado do game-->
     <div class="tabuleiro" id="jogo"><!--verificar tamanho do tabuleiro com matt-->
       <canvas class="area-jogo" id="forca" style="border:1px solid #d3d3d3;"></canvas>
     </div>
     <div class="btn-novo-desistir">
       <div>
-        <button class="btn-novo">Novo jogo</button>
+        <button class="btn-novo" id="novo">Novo jogo</button>
       </div>
       <div>
-        <button class="btn-desistir">Desistir</button>
+        <button class="btn-desistir" id="desistir">Desistir</button>
       </div>
     </div>
   </section>
-  <section class="adicionar" id="add">
+  <section class="adicionar hide" id="add">
     <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite uma palavra ou frase"></textarea>
     <div class ="msg" id="aviso">
       <img src="imgs/vector.png" alt="ponto de exclamação">
@@ -55,7 +55,8 @@
       </div>
     </div>
   </section>
-  <script src="js/script.js"></script>
+  <script src="js/botoes.js"></script>
+  <script src="js/forca.js"></script>
 </body>
 <footer>
 <div class="copy">
