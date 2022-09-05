@@ -28,8 +28,8 @@
     </div>
   </section>
   <section class="game hide" id="secao-jogo"> <!--Colocar Hide ao lado do game-->
-    <div class="tabuleiro" id="jogo"><!--verificar tamanho do tabuleiro com matt-->
-      <canvas class="area-jogo" id="forca" style="border:1px solid #d3d3d3;"></canvas>
+    <div class="tabuleiro" id="jogo">
+      <canvas class="area-jogo" id="forca"></canvas>
     </div>
     <div class="btn-novo-desistir">
       <div>
@@ -41,7 +41,7 @@
     </div>
   </section>
   <section class="adicionar hide" id="add">
-    <textarea  class="area-palavra"name="" id="txt-palavra" cols="30" rows="10" placeholder="Digite uma palavra ou frase"></textarea>
+    <textarea  class="area-palavra"name="" maxlength="8" id="txt-palavra" cols="30" rows="10"  autocomplete="off" placeholder="Digite uma palavra ou frase"></textarea>
     <div class ="msg" id="aviso">
       <img src="imgs/vector.png" alt="ponto de exclamação">
       <p>Máx. de 8 letras</p>

@@ -1,0 +1,9 @@
+Bem vindos ao tutorial do jogo da forca criado por Lucas Gustavo em 2022 ultilizando tecnologias
+como HTML, CSS e JavaScript.
+
+1 - Caso queira jogar sem adicionar palavras ao array basta iniciar o jogo, as palavras pré inseridas
+são tecnologias: JAVA, HTML, CSS etc, não darei as respostas de todas para não perder a graça rsrsrs. 
+
+2 - Caso insira uma nova palavra ela é inserida no array de palavras e então um novo sorteio acontece.
+
+3 - Boa sorte e uma excelente jogatina! :)  

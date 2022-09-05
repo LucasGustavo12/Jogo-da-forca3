@@ -69,8 +69,29 @@ novo.addEventListener("click", function(){
 location.reload();
 })
 
+//novo-jogo
+function btnNovoJogo() {
+  let novo = document.getElementById("novo");
+  novo.addEventListener("click", function () {
+    location.reload();
+  });
+}
 
-//novo-jogo criar função para o novo jogo
 
+//Adicionar palavra
+function adicionarPalavra() {
+  let adicionarPalavra = document.getElementById("btn-s");
+  adicionarPalavra.addEventListener("click", function () {
+    let palavra = document.getElementById("txt-palavra").value;
+    console.log(palavras);
+    if (palavra.length >= 1) {
+      //window.onkeypress = null;
+      palavras.push(palavra.toUpperCase());
+      palavraSecreta = palavras[Math.floor(Math.random() * qtdPalavras)]; //Faz um novo sorteio no array de palavras
+    } else {
+      alert("erro");
+    }
+  })
+};
 
-
+adicionarPalavra();
