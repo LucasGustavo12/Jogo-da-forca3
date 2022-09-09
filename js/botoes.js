@@ -62,6 +62,7 @@ desistir.addEventListener("click", function(){
   ctx.fillStyle='red';
   ctx.fillText("Game over por desistência, tente novamente!", 10, 140);
   window.onkeypress = null;
+  desistir.disabled = true; 
 });
 
 let novo = document.getElementById("novo");

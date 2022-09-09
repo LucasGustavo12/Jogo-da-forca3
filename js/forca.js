@@ -35,7 +35,6 @@ window.onkeypress = teclaPressionada;
 function teclaPressionada() {
   let sectiongame = document.getElementById("secao-jogo");
   if(!sectiongame.classList.contains("hide")){
- console.log(palavraSecreta);
     if (!tentativas.includes(event.key) && palavraSecreta.includes((event.key).toUpperCase())){
       for(let i= 0; i < palavraSecreta.length; i++){
         if(palavraSecreta[i] == (event.key).toUpperCase()) {
@@ -52,7 +51,20 @@ function teclaPressionada() {
     }
     verificaFimdeJogo();
   }
+  }
+
+
+/*
+function impedeNumeros(){
+ const char = String.fromCharCode(event.key);
+ const pattern = '[a-zA-Z]';
+ if(char.match(pattern)){
+  return true;
+ }
 }
+*/ // Aplicar a regra da não numeração
+
+
 
 //mostra as letras que errei
 function adicionaTentativa() {
@@ -73,12 +85,14 @@ function verificaFimdeJogo() {
     ctx.fillStyle='red';
     ctx.fillText("Game Over! A palavra era: " + palavraSecreta, 10, 140);
     window.onkeypress = null;
+    desistir.disabled = true; 
     return;
    }
     else if(acertos == palavraSecreta.length){
       ctx.font = "10px Arial";
       ctx.fillText("Você ganhou!", 10, 130);
       window.onkeypress = null;
+      desistir.disabled = true; 
       return;
     }
 }
