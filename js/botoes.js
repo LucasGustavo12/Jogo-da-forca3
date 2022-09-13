@@ -60,7 +60,7 @@ let desistir = document.getElementById("desistir");
 desistir.addEventListener("click", function(){
   ctx.font = "10px Arial";
   ctx.fillStyle='red';
-  ctx.fillText("Game over por desistência, tente novamente!", 10, 140);
+  ctx.fillText("Game Over! A palavra era: " + palavraSecreta, 10, 140);
   window.onkeypress = null;
   desistir.disabled = true; 
 });
