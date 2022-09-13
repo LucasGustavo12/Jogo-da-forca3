@@ -28,41 +28,47 @@ desenhaPernaDireita();
 //desenhaTracos();
 */
 
+
 window.onkeypress = teclaPressionada; 
 
+
 //verifica a tecla antes de inicar o jogo
+function verificaSeNumero(){
+let key = event.keyCode || event.which;
+if(key >= 32 && key <= 63 || key >= 91 && key <= 96 || key >=123 && key < 255) {
+  preventDefault();
+  }
+  return true;
+}
+
+
 
 function teclaPressionada() {
   let sectiongame = document.getElementById("secao-jogo");
   if(!sectiongame.classList.contains("hide")){
-    if (!tentativas.includes(event.key) && palavraSecreta.includes((event.key).toUpperCase())){
-      for(let i= 0; i < palavraSecreta.length; i++){
-        if(palavraSecreta[i] == (event.key).toUpperCase()) {
-          ctx.font = "20px Arial";
-          ctx.fillStyle='#0A3871';
-          ctx.fillText((event.key).toUpperCase(), 70 + (35 * i), 100);
-          acertos++; 
+    verificaSeNumero();
+      if (!tentativas.includes(event.key) && palavraSecreta.includes((event.key).toUpperCase())){
+        for(let i= 0; i < palavraSecreta.length; i++){
+          if(palavraSecreta[i] == (event.key).toUpperCase()) {
+            ctx.font = "20px Arial";
+            ctx.fillStyle='#0A3871';
+            ctx.fillText((event.key).toUpperCase(), 70 + (35 * i), 100);
+            acertos++; 
+          }
         }
+      } else {
+        adicionaTentativa();
+        quantidadeErros++;
+        desenhaBoneco(quantidadeErros);
       }
-    } else {
-      adicionaTentativa();
-      quantidadeErros++;
-      desenhaBoneco(quantidadeErros);
-    }
-    verificaFimdeJogo();
+      verificaFimdeJogo();
+    
+    
   }
   }
 
+// Aplicar a regra da não numeração pontos e virgulas etc
 
-/*
-function impedeNumeros(){
- const char = String.fromCharCode(event.key);
- const pattern = '[a-zA-Z]';
- if(char.match(pattern)){
-  return true;
- }
-}
-*/ // Aplicar a regra da não numeração
 
 
 
@@ -72,7 +78,7 @@ function adicionaTentativa() {
     tentativas = tentativas + event.key;
     ctx.font = "10px Arial";
     ctx.fillStyle = '#495057';
-    ctx.fillText(tentativas.toUpperCase(), 110, 110);
+    ctx.fillText(tentativas.toUpperCase(), 120, 120);
   }
 }
 
